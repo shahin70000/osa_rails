@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nom: MyString
+  rang_t: 1.5
+  rang_f: 1.5
+  rang_q: 1.5
+  rang_nom: 1
+  trace: MyText
+
+two:
+  nom: MyString
+  rang_t: 1.5
+  rang_f: 1.5
+  rang_q: 1.5
+  rang_nom: 1
+  trace: MyText
