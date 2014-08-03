@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140801125647) do
+ActiveRecord::Schema.define(version: 20140803080133) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -45,5 +45,33 @@ ActiveRecord::Schema.define(version: 20140801125647) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+
+  create_table "leins", force: true do |t|
+    t.integer  "nom_id",      null: false
+    t.integer  "lune_id",     null: false
+    t.integer  "un_duex_id",  null: false
+    t.integer  "rang_nom_id"
+    t.float    "rang_t"
+    t.float    "rang_f"
+    t.float    "rang_q"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "noms", force: true do |t|
+    t.string   "nom"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rangs", force: true do |t|
+    t.integer  "nom_id",                   null: false
+    t.float    "rang_t",     default: 0.0, null: false
+    t.float    "rang_f",     default: 0.0, null: false
+    t.float    "rang_q",     default: 0.0, null: false
+    t.text     "trace"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
