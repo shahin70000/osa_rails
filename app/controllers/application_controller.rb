@@ -14,20 +14,26 @@ class ApplicationController < ActionController::Base
   
     def wiki_raw(name="404")
       gollum = Gollum::Wiki.new("gollum/.git")
-      page = gollum.file(name)
+      page = gollum.page(name)
+                  
       if page.nil?
         page = gollum.page('404')
+        result = page.raw_data
+        result << name
+        result << "*)"
+      else
+        result = page.raw_data
       end
-      page.raw_data
+      
+      result
     end
     
     def mark_render(raw_object)
       (markdown.render raw_object).html_safe
     end 
   
-    def wiki(name="404")
+    def wiki(name)
       page_raw = wiki_raw(name)
       mark_render page_raw
     end
-  
 end
