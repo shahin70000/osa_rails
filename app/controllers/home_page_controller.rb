@@ -1,32 +1,21 @@
 class HomePageController < ApplicationController
   def index
-    @content = wiki_page "home"
+      @content = assemble "subjects"
   end
+
   
   private
-  
-    def wiki_page(name="404")
-      wiki = Gollum::Wiki.new("gollum/.git")
-      page = wiki.page(name)
-                  
-      if page.nil?
-        page = wiki.page('404')
+    def assemble(subject_list="404")
+      subjects = wiki_raw subject_list
+      content_raw = ""
+      subjects.each_line do |line|
+        unless line.empty?
+          content_raw << wiki_raw(line.to_s.chomp )
+          content_raw << "\n --- \n"
+        end 
       end
-      
-      page.formatted_data.html_safe
-    end
+        content = mark_render content_raw
+    end 
   
-    def wiki_file(name="404")
-      markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
-
-      wiki = Gollum::Wiki.new("gollum/.git")
-      file = wiki.file(name.to_s+'.md')
-      
-      if file.nil?
-        file = wiki.file('404.md')
-      end
-      
-      (markdown.render file.raw_data).html_safe
-    end
   
 end
