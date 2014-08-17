@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem "gollum"
+gem "gollum-lib"
+gem "redcarpet"
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

@@ -2,9 +2,10 @@ require 'active_support/concern'
 
 module RegularMessages
   extend ActiveSupport::Concern
-  
+
   def welcome_message
-    "Hello, and welcome to the interactive article of Observer Spectrum. \b hello again"
+   wiki = Gollum::Wiki.new(".git", :base_path => "/gollum")
+   wiki.page('Home').raw_data
   end
 
 end
