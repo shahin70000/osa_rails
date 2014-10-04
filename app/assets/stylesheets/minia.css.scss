@@ -1,4 +1,18 @@
+@font-face {
+    font-family: 'jalane_light';
+    src: asset-url('jalane_light-webfont.eot');
+    src: asset-url('jalane_light-webfont.eot?#iefix') format('embedded-opentype'),
+         asset-url('jalane_light-webfont.woff2') format('woff2'),
+         asset-url('jalane_light-webfont.woff') format('woff'),
+         asset-url('jalane_light-webfont.ttf') format('truetype'),
+         asset-url('jalane_light-webfont.svg#jalane_lightjalane_light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 .minia {
+	font-family: 'jalane_light';
 	font-size: 5px;	
 	color: black;
 	border: 1px gray;
