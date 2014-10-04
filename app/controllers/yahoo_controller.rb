@@ -1,0 +1,2 @@
+class YahooController < ApplicationController
+end
