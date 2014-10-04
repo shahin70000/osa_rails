@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'yahoo-finance'
 gem "pg"
 gem "gollum"
 gem "gollum-lib"
