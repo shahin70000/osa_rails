@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   
   root 'home_page_#index'
+  get 'minia'  => 'home_page#minia'
+  get 'wiki'  => 'home_page#wiki'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

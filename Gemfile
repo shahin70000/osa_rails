@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'google-search'
 gem 'yahoo-finance'
 gem "pg"
 gem "gollum"

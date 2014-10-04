@@ -1,9 +1,14 @@
 class HomePageController < ApplicationController
-  def index
+  def wiki
       @content = assemble "subjects"
   end
 
-  
+  def index
+  end
+
+  def minia
+  end
+
   private
     def assemble(subject_list="404")
       subjects = wiki_raw subject_list
