@@ -12,13 +12,16 @@
 }
 
 .minia {
-	font-family: 'jalane_light';
-	font-size: 5px;	
+	font-family: Arial;
+/*   font-family:  'jalane_light';  */
+
+	font-size: 1em;	
   line-height: 120%;
 	color: white;
-  background-color: blue;
+  background-color: #007FFF;
 	border-width: 0.01px;
   border-style: dashed;
 	padding: 1px 1px 1px 1px;
 	margin: 0px 0px 0px 0px;
+  text-shadow: black 1px 1px 1px
 }
